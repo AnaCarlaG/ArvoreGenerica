@@ -16,12 +16,12 @@ namespace ArvoreGenerica.Classes
 
         public No getRaiz()
         {
-            return raiz;
+            return Raiz;
         }
 
         public No Buscar (int procurado)
         {
-            Raiz.Buscar(procurado);
+            return Raiz.Buscar(procurado);
         }
     }
 }
