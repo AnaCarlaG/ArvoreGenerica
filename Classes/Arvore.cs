@@ -9,7 +9,7 @@ namespace ArvoreGenerica.Classes
         private No Raiz;
 
 
-        public Arvore(int dadosRaiz)
+        public Arvore(Object dadosRaiz)
         {
             this.Raiz = new No(dadosRaiz);
         }
@@ -19,7 +19,7 @@ namespace ArvoreGenerica.Classes
             return Raiz;
         }
 
-        public No Buscar (int procurado)
+        public No Buscar (Object procurado)
         {
             return Raiz.Buscar(procurado);
         }

@@ -7,18 +7,32 @@ namespace ArvoreGenerica.Classes
     public class No
     {
         private Object dados;
-        private List<No> filhos;
+        private LinkedListNode<No> filhos;
 
         public No(Object dados)
         {
             this.dados = dados;
-            this.filhos = new List<No>();
+            this.filhos = new LinkedListNode<No>(new No(dados));
         }
 
         public No AddFilho(Object dadosFilho)
         {
             No n = new No(dadosFilho);
-            filhos.Add(n);
+            if (filhos.List.Count != 0)
+            {
+                filhos.List.AddAfter(filhos.List.First, n);
+            }
+            else
+            {
+                filhos.List.AddFirst(n);
+            }
+
+            if (filhos.List.First != null)
+            {
+                var prox = filhos.List.First.Next;
+
+                filhos.List.AddAfter(prox, n);
+            }
             return n;
         }
 
@@ -27,18 +41,13 @@ namespace ArvoreGenerica.Classes
             return dados;
         }
 
-        public List<No> getFilhos()
+        public LinkedListNode<No> getFilhos()
         {
             return filhos;
         }
 
-        public No Buscar (Object procurado)
-        {
-            if(filhos.Exists(m => m.dados == procurado))
-            {
-                return filhos.Find(m => m.dados == procurado);
-            }
-            return null;
-        }
+        //public No Buscar(Object procurado)
+        //{
+        //}
     }
 }
