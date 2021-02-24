@@ -6,23 +6,23 @@ namespace ArvoreGenerica.Classes
 {
     public class No
     {
-        private int dados;
+        private Object dados;
         private List<No> filhos;
 
-        public No(int dados)
+        public No(Object dados)
         {
             this.dados = dados;
             this.filhos = new List<No>();
         }
 
-        public No AddFilho(int dadosFilho)
+        public No AddFilho(Object dadosFilho)
         {
             No n = new No(dadosFilho);
             filhos.Add(n);
             return n;
         }
 
-        public int getDados()
+        public Object getDados()
         {
             return dados;
         }
@@ -32,7 +32,7 @@ namespace ArvoreGenerica.Classes
             return filhos;
         }
 
-        public No Buscar (int procurado)
+        public No Buscar (Object procurado)
         {
             if(filhos.Exists(m => m.dados == procurado))
             {
