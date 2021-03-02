@@ -15,25 +15,11 @@ namespace ArvoreGenerica.Classes
             this.filhos = new LinkedListNode<No>(new No(dados));
         }
 
-        public No AddFilho(Object dadosFilho)
+        public void AddFilho(Object dadosFilho)
         {
             No n = new No(dadosFilho);
-            if (filhos.List.Count != 0)
-            {
-                filhos.List.AddAfter(filhos.List.First, n);
-            }
-            else
-            {
-                filhos.List.AddFirst(n);
-            }
 
-            if (filhos.List.First != null)
-            {
-                var prox = filhos.List.First.Next;
-
-                filhos.List.AddAfter(prox, n);
-            }
-            return n;
+            filhos.List.AddLast(n);
         }
 
         public Object getDados()
@@ -45,9 +31,5 @@ namespace ArvoreGenerica.Classes
         {
             return filhos;
         }
-
-        //public No Buscar(Object procurado)
-        //{
-        //}
     }
 }

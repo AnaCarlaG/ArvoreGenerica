@@ -18,10 +18,5 @@ namespace ArvoreGenerica.Classes
         {
             return Raiz;
         }
-
-        public No Buscar (Object procurado)
-        {
-            return Raiz.Buscar(procurado);
-        }
     }
 }

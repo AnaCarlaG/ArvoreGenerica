@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArvoreGenerica.Classes;
+using System;
 
 namespace ArvoreGenerica
 {
@@ -6,7 +7,7 @@ namespace ArvoreGenerica
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Arvore arvore = new Arvore("no1");
         }
     }
 }
